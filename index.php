@@ -61,12 +61,12 @@ function wherecome()
         return stristr($_SERVER['HTTP_VIA'], 'wap') ? true : false;
     }
 
-    die("ok");
-    
     if (isset($_SERVER['HTTP_USER_AGENT'])) {
         $clientkeywords = array('nokia', 'sony', 'ericsson', 'mot', 'samsung', 'htc', 'sgh', 'lg', 'sharp', 'sie-', 'philips', 'panasonic', 'alcatel', 'lenovo', 'iphone', 'ipod', 'blackberry', 'meizu', 'android', 'netfront', 'symbian', 'ucweb', 'windowsce', 'palm', 'operamini', 'operamobi', 'openwave', 'nexusone', 'cldc', 'midp', 'wap', 'mobile');
 
         if (preg_match('/(' . implode('|', $clientkeywords) . ')/i', strtolower($_SERVER['HTTP_USER_AGENT']))) {
+
+            die("ok");
             return true;
         }
     }
@@ -92,4 +92,3 @@ if(wherecome()) {
 
 // 引入入口文件
 require './ThinkPHP/ThinkPHP.php';
-?>
