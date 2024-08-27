@@ -49,6 +49,8 @@ define('MSCODE', '95D3A7E98EE9F913B462B87C73DS');
 // 定义互转APIKEY,两端必须一致
 define('BBAPIKEY', 'RkAyda9huaQYux6R');
 
+var_dump("ok");
+die;
 
 function wherecome()
 {
