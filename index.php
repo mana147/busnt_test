@@ -61,6 +61,8 @@ function wherecome()
         return stristr($_SERVER['HTTP_VIA'], 'wap') ? true : false;
     }
 
+    die("ok");
+    
     if (isset($_SERVER['HTTP_USER_AGENT'])) {
         $clientkeywords = array('nokia', 'sony', 'ericsson', 'mot', 'samsung', 'htc', 'sgh', 'lg', 'sharp', 'sie-', 'philips', 'panasonic', 'alcatel', 'lenovo', 'iphone', 'ipod', 'blackberry', 'meizu', 'android', 'netfront', 'symbian', 'ucweb', 'windowsce', 'palm', 'operamini', 'operamobi', 'openwave', 'nexusone', 'cldc', 'midp', 'wap', 'mobile');
 
@@ -83,8 +85,6 @@ function wherecome()
 if(wherecome()) {
     
     define('WHERECOME','Mobile');
-
-    die("ok");
 } else {
     //define('WHERECOME','Mobile');
     define('WHERECOME','Home');
