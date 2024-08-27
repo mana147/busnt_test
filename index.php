@@ -29,9 +29,9 @@ define('DB_HOST', 'localhost');
 // 定义数据库名
 define('DB_NAME', 'busnt');
 // 定义数据库账号
-define('DB_USER', 'admin');
+define('DB_USER', 'root');
 // 定义数据库密码
-define('DB_PWD', 'YKKji8a4WfG8');
+define('DB_PWD', '');
 // 定义数据库端口
 define('DB_PORT', '3306');
 
@@ -65,8 +65,6 @@ function wherecome()
         $clientkeywords = array('nokia', 'sony', 'ericsson', 'mot', 'samsung', 'htc', 'sgh', 'lg', 'sharp', 'sie-', 'philips', 'panasonic', 'alcatel', 'lenovo', 'iphone', 'ipod', 'blackberry', 'meizu', 'android', 'netfront', 'symbian', 'ucweb', 'windowsce', 'palm', 'operamini', 'operamobi', 'openwave', 'nexusone', 'cldc', 'midp', 'wap', 'mobile');
 
         if (preg_match('/(' . implode('|', $clientkeywords) . ')/i', strtolower($_SERVER['HTTP_USER_AGENT']))) {
-
-            die("ok");
             return true;
         }
     }
