@@ -37,7 +37,7 @@ define('DB_PORT', '3306');
 
 
 // 开启演示模式
-define('APP_DEMO',0);
+define('APP_DEMO',1);
 // 短信模式 0是演示模式  1是正式模式
 define('MOBILE_CODE',1);
 // 开始调试模式
@@ -81,7 +81,6 @@ function wherecome()
 
 // 判断访问入口
 if(wherecome()) {
-    
     define('WHERECOME','Mobile');
 } else {
     //define('WHERECOME','Mobile');
