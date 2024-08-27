@@ -1,4 +1,7 @@
 <?php
+echo "ok";
+die;
+
 //调试信息
 ini_set("display_errors", "On");
 error_reporting(E_ALL ^ E_NOTICE);
