@@ -27,9 +27,9 @@ define('DB_TYPE', 'mysql');
 // 定义数据库地址  蜜桃源码网--www.mitaobo.com
 define('DB_HOST', '127.0.0.1');
 // 定义数据库名
-define('DB_NAME', 'admin');
+define('DB_NAME', 'busnt');
 // 定义数据库账号
-define('DB_USER', 'busnt');
+define('DB_USER', 'admin');
 // 定义数据库密码
 define('DB_PWD', 'YKKji8a4WfG8');
 // 定义数据库端口
