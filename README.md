@@ -3,9 +3,13 @@
 Doc deploy project Busnt 
 
 1 : https://github.com/mana147/busnt_test.git
+
 2 : cài đặt Apache và config
+
 3 : cài đặt mysql và phpmyadmin
+
 4 : cài đặt redis 
+
 5 : add project và config
 
 -----------------------------------------------------------------------------------------
