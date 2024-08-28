@@ -41,8 +41,6 @@ class HomeController extends \Think\Controller
 
 	public function __construct()
 	{
-
-		die("ok");
 		parent::__construct();
 	}
 }

@@ -14,6 +14,8 @@ class IndexController extends HomeController
 
     //网站首页面
 	public function index(){
+        die("网站首页面");
+
         $list = M("ctmarket")->where(array('status'=>1))->field("coinname,id,logo")->select();
         unset($list[6]);
         $this->assign("market",$list);
