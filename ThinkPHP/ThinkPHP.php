@@ -114,6 +114,9 @@ function reChmod($path, $filePerm = 0644, $dirPerm = 0755)
         }
     }
 
+    var_dump("ok"); die;
+
+
     // 加载核心Think类
     require CORE_PATH . 'Think' . EXT;
     // 应用初始化

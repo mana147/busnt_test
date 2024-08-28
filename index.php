@@ -38,7 +38,7 @@ define('DB_PORT', '3306');
 
 // 开启演示模式
 define('APP_DEMO',0);
-// 短信模式 0是演示模式  1是正式模式
+// 短信模式 0 是演示模式  1 是正式模式
 define('MOBILE_CODE',0);
 // 开始调试模式
 define('M_DEBUG', 0);
