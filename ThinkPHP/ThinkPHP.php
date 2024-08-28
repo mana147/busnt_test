@@ -119,11 +119,12 @@ require CORE_PATH . 'Think' . EXT;
 // 应用初始化
 Think\Think::start();
 
-// try {
-// } catch (Exception $exception) {
-//     send_http_status(404);
-//     $string = file_get_contents('./404.html');
-//     $string = str_replace('$ERROR_MESSAGE', $exception->getMessage(), $string);
-//     $string = str_replace('HTTP_HOST', 'http://' . $_SERVER['HTTP_HOST'], $string);
-//     echo $string;
-// }
+try {
+    
+} catch (Exception $exception) {
+    send_http_status(404);
+    $string = file_get_contents('./404.html');
+    $string = str_replace('$ERROR_MESSAGE', $exception->getMessage(), $string);
+    $string = str_replace('HTTP_HOST', 'http://' . $_SERVER['HTTP_HOST'], $string);
+    echo $string;
+}

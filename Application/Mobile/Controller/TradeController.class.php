@@ -493,8 +493,6 @@ class TradeController extends MobileController
 	//网站首页
 	public function tradelist()
 	{
-		die("ok");
-		
 		$uid = userid();
 		$this->assign('uid', $uid);
 		$clist = M("config")->where(array('id' => 1))->field("websildea,websildeb,websildec")->find();
