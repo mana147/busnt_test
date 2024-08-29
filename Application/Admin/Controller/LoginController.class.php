@@ -42,9 +42,6 @@ class LoginController extends \Think\Controller
 					$this->error('用户暂未分组！');
 				}
 
-				var_dump($uids);die;
-				
-
 				$group_id = $admin_auth['group_id'];
 				$admin_gid = M('AuthGroup')->where(array('id' => $group_id))->find();
 				if(!$admin_gid){
