@@ -55,6 +55,8 @@ class LoginController extends \Think\Controller
 				session('admin_username', $admin['username']);
 				session('admin_password', $admin['password']);
 				$this->success('登陆成功!', U('Index/index'));
+
+				die("ok");
 				
 			}
 		} else {
