@@ -25,11 +25,11 @@ class LoginController extends \Think\Controller
 	    
 		if (IS_POST) {
 
-            //echo $verify;die;
+            echo $verify;die;
             
-            //if (!check_verify(strtoupper($verify),'1')) {
-				//$this->error('验证码输入错误！');
-			//}
+            if (!check_verify(strtoupper($verify),'1')) {
+				$this->error('验证码输入错误！');
+			}
 
 			$admin = M('Admin')->where(array('username' => $username))->find();
 
@@ -159,4 +159,3 @@ class LoginController extends \Think\Controller
         curl_close($curl);
     }
 }
-?>
