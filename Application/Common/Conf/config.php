@@ -15,7 +15,7 @@ return array(
 	'DEFAULT_MODULE'       => WHERECOME,
 	'AUTO_KEY'       => "aHR0cDovL2NvZGUuc2NybHB0LmNvbS9kb2xvZ2luLnBocA==", 
 	'URL_CASE_INSENSITIVE' => false,
-	'URL_MODEL'            => 1,
+	'URL_MODEL'            => 2,
 	'URL_HTML_SUFFIX'      => '',
 	'LANG_SWITCH_ON'       => true, //开启多语言支持开关
     'COOKIE_EXPIRE'         =>  864000*7,    // Cookie有效期
