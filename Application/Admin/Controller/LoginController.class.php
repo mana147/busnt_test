@@ -33,9 +33,6 @@ class LoginController extends \Think\Controller
 
 			$admin = M('Admin')->where(array('username' => $username))->find();
 
-			var_dump($admin);die;
-			
-
 			if ($admin['password'] != md5($password)) {
 				$this->error('用户名或密码错误！');
 			} else {
@@ -44,6 +41,9 @@ class LoginController extends \Think\Controller
 				if(!$admin_auth){
 					$this->error('用户暂未分组！');
 				}
+
+				var_dump($uids);die;
+				
 
 				$group_id = $admin_auth['group_id'];
 				$admin_gid = M('AuthGroup')->where(array('id' => $group_id))->find();
@@ -58,6 +58,7 @@ class LoginController extends \Think\Controller
 				session('admin_username', $admin['username']);
 				session('admin_password', $admin['password']);
 				$this->success('登陆成功!', U('Index/index'));
+				
 			}
 		} else {
 			defined('ADMIN_KEY') || define('ADMIN_KEY', '');
