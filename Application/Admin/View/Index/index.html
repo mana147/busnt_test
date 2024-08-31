@@ -23,8 +23,7 @@
                     </div>
                     <div class="value">
                         <h1 class="count" style="font-size: 24px;">{$alluser} </h1>
-
-                        <p>注册总人数（人）</p>
+                        <p><?php echo L('注册总人数'); ?></p>
                     </div>
                 </section>
             </div>
@@ -36,8 +35,7 @@
                     </div>
                     <div class="value">
                         <h1 class=" count2" style="font-size: 24px;">{$allhy} </h1>
-
-                        <p>秒合约未平仓（条）</p>
+                        <p><?php echo L('秒合约未平仓'); ?></p>
                     </div>
                 </section>
             </div>
@@ -48,8 +46,7 @@
                     </div>
                     <div class="value">
                         <h1 class=" count3" style="font-size: 24px;">{$bball}</h1>
-
-                        <p>币币交易额度（USDT）</p>
+                        <p><?php echo L('币币交易额度 (USDT)'); ?></p>
                     </div>
                 </section>
             </div>
@@ -60,8 +57,7 @@
                     </div>
                     <div class="value">
                         <h1 class=" count4" style="font-size: 24px;">{$allkj} </h1>
-
-                        <p>全网有效矿机总数（台）</p>
+                        <p><?php echo L('全网有效矿机总数 (台)'); ?></p>
                     </div>
                 </section>
             </div>
@@ -78,8 +74,7 @@
                     </div>
                     <div class="value">
                         <h1 class="count" style="font-size: 24px;">{$allissue}</h1>
-
-                        <p>认购记录数（条）</p>
+                        <p><?php echo L('认购记录数 (条)'); ?> </p>
                     </div>
                 </section>
             </div>
@@ -91,8 +86,7 @@
                     </div>
                     <div class="value">
                         <h1 class=" count2" style="font-size: 24px;">{$daycz} | {$allcz}</h1>
-
-                        <p>今日充值/充值总量（USDT）</p>
+                        <p><?php echo L('今日充值/充值总量 (USDT)'); ?> </p>
                     </div>
                 </section>
             </div>
@@ -103,8 +97,7 @@
                     </div>
                     <div class="value">
                         <h1 class=" count3" style="font-size: 24px;">{$daytx} | {$alltx}</h1>
-
-                        <p>今日提现/提币总量（USDT）</p>
+                        <p><?php echo L('今日提现/提币总量 (USDT)'); ?> </p>
                     </div>
                 </section>
             </div>
@@ -115,8 +108,7 @@
                     </div>
                     <div class="value">
                         <h1 class=" count4" style="font-size: 24px;">{$allline}</h1>
-
-                        <p>今日访客量（人）</p>
+                        <p><?php echo L('今日访客量(人)'); ?> </p>
                     </div>
                 </section>
             </div>
@@ -128,7 +120,7 @@
                 <div class="col-lg-6">
                     <section class="panel">
                         <header class="panel-heading">
-                            用户注册报表(30天)
+                            <?php echo L('用户注册报表(30天)'); ?> 
                         </header>
                         <div class="panel-body">
                             <div id="hero-bar" class="graph"></div>
@@ -138,7 +130,7 @@
                 <div class="col-lg-6">
                     <section class="panel">
                         <header class="panel-heading">
-                            充值/提现 统计图(30天)
+                            <?php echo L('充值/提现 统计图(30天)'); ?> 
                         </header>
                         <div class="panel-body">
                             <div id="hero-graph" class="graph"></div>
@@ -166,8 +158,8 @@
                         'withdraw'
                     ],
                     labels: [
-                        '充值',
-                        '提现'
+                        '<?php echo L("充值"); ?>',
+                        '<?php echo L("提现"); ?>'
                     ],
                     lineColors: [
                         '#8075c4',
@@ -185,7 +177,7 @@
                     data: data,
                     xkey: 'date',
                     ykeys: ['sum'],
-                    labels: ['人数'],
+                    labels: ['<?php echo L("人数"); ?>'],
                     barRatio: 0.4,
                     xLabelAngle: 35,
                     hideHover: 'auto',
@@ -242,8 +234,8 @@
                   var mp3 = new Audio('/kefu.mp3');  // 创建音频对象
                 mp3.play(); 
                 return false;
-                layer.confirm('有新的合约订单', {
-                  btn: ['知道了'] //按钮
+                layer.confirm('<?php echo L("有新的合约订单"); ?>', {
+                  btn: ['<?php echo L("知道了"); ?>'] //按钮
                 }, function(){
                     
                     $.post("{:U('Admin/Trade/settzstatus')}",

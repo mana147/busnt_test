@@ -21,7 +21,8 @@ return array(
     'COOKIE_EXPIRE'         =>  864000*7,    // Cookie有效期
 	'LANG_AUTO_DETECT'     => true, // 自动侦测语言
 	'DEFAULT_LANG'         => 'vi-vn', // 默认语言
-	'LANG_LIST'     	   => 'zh-cn,en-us,fr-fr,de-de,it-it,ja-jp,ko-kr,tr-tr,vi-vn',
+	// 'LANG_LIST'     	   => 'zh-cn,en-us,fr-fr,de-de,it-it,ja-jp,ko-kr,tr-tr,vi-vn',
+	'LANG_LIST'     	   => 'vi-vn',
 	'VAR_LANGUAGE'         => 'Lang', //默认语言切换变量
     'NATION'     =>array('zh_CN'=>'中国','en_US'=>'美国',),
     'PUBLICCONTRACT'              =>  'TFxnxEBbCiMCJGYtYcALevD3rZ9W6s7zAL', //公共合约地址

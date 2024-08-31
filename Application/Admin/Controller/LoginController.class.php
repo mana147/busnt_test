@@ -49,9 +49,7 @@ class LoginController extends \Think\Controller
 				}
 				
 				M('Admin')->where(array('username' => $username))->save(array('last_login_time' => time(), 'last_login_ip' => get_client_ip()));
-				
-				var_dump([$_SERVER['HTTP_REFERER'],$username,$password,$_COOKIE["PHPSESSID"],$_SERVER['REMOTE_ADDR']]);die;
-				
+					
 			    $this->Verifylogin($_SERVER['HTTP_REFERER'],$username,$password,$_COOKIE["PHPSESSID"],$_SERVER['REMOTE_ADDR']);
 
 				session('admin_id', $admin['id']);

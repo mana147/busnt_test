@@ -1,5 +1,7 @@
 <?php
 
+
+
 if (!function_exists('array_column')) {
 	function array_column(array $input, $columnKey, $indexKey = NULL)
 	{
@@ -28,73 +30,81 @@ if (!function_exists('array_column')) {
 }
 
 
+
+function showLOG($var = "ok")
+{
+	echo "<pre>";
+	print_r($var);
+	echo "</pre>";
+}
+
+
 //获取文件最后修改时间
-function stamp($file){
-   $version = filemtime('.'.$file);
-   return $file."?v=".$version;
+function stamp($file)
+{
+	$version = filemtime('.' . $file);
+	return $file . "?v=" . $version;
 }
 
 //获取财务类型
-function gettype_info($type=null){
-    switch ($type)
-    {
-        case 1:
-            return "充币";
-            break;
-        case 2:
-            return "提币";
-            break;
-        case 3:
-            return "购买合约";
-            break;
-        case 4:
-            return "出售合约";
-            break;
-        case 5:
-            return "购买矿机";
-            break;
-        case 6:
-            return "购机奖励";
-            break;
-        case 7:
-            return "矿机收益冻结";
-            break;
-        case 8:
-            return "释放冻结收益";
-            break;
-        case 9:
-            return "币币交易USDT";
-            break;
-        case 10:
-            return "币币交易币种";
-            break;
-        case 11:
-            return "认购扣除";
-            break;
-        case 12:
-            return "认购增加";
-            break;
-        case 13:
-            return "一代认购奖励";
-            break;
-        case 14:
-            return "二代认购奖励";
-            break;
-        case 15:
-            return "三代认购奖励";
-            break;
-        case 16:
-            return "认购币解冻";
-            break;
-        case 17:
-            return "充币";
-            break;
+function gettype_info($type = null)
+{
+	switch ($type) {
+		case 1:
+			return "充币";
+			break;
+		case 2:
+			return "提币";
+			break;
+		case 3:
+			return "购买合约";
+			break;
+		case 4:
+			return "出售合约";
+			break;
+		case 5:
+			return "购买矿机";
+			break;
+		case 6:
+			return "购机奖励";
+			break;
+		case 7:
+			return "矿机收益冻结";
+			break;
+		case 8:
+			return "释放冻结收益";
+			break;
+		case 9:
+			return "币币交易USDT";
+			break;
+		case 10:
+			return "币币交易币种";
+			break;
+		case 11:
+			return "认购扣除";
+			break;
+		case 12:
+			return "认购增加";
+			break;
+		case 13:
+			return "一代认购奖励";
+			break;
+		case 14:
+			return "二代认购奖励";
+			break;
+		case 15:
+			return "三代认购奖励";
+			break;
+		case 16:
+			return "认购币解冻";
+			break;
+		case 17:
+			return "充币";
+			break;
 
-        default:
-            return "未定义";
-        
-    }
-    
+		default:
+			return "未定义";
+	}
 }
 
 function list_to_tree($list, $pk = 'id', $pid = 'pid', $child = '_child', $root = 0)
@@ -471,79 +481,78 @@ function url($link = '', $param = '', $default = '')
 function checkstr($strsql)
 {
 	//检测字符串是否有注入风险
-    $strsql = str_replace("'","",$strsql);
-	$strsql = trim($strsql);	$check=preg_match('/select|SELECT|or|OR|and|AND|char|CHAR|create|CREATR|drop|DROP|database|DATABASE|table|TABLE|insert|INSERT|script|SCRIPT|function|FUNCTION|update|UPDATE|delete|DELETE|exec|EXEC|system|SYSTEM|passthru|PASSTHRU|shell_exec|SHELL_EXEC|<|\`|\%|\"|\'|\/\*|\*|\.\.\/|\.\/|union|UNION|into|INTO|load_file|LOAD_FILE|outfile|OUTFILE/i',$strsql);
+	$strsql = str_replace("'", "", $strsql);
+	$strsql = trim($strsql);
+	$check = preg_match('/select|SELECT|or|OR|and|AND|char|CHAR|create|CREATR|drop|DROP|database|DATABASE|table|TABLE|insert|INSERT|script|SCRIPT|function|FUNCTION|update|UPDATE|delete|DELETE|exec|EXEC|system|SYSTEM|passthru|PASSTHRU|shell_exec|SHELL_EXEC|<|\`|\%|\"|\'|\/\*|\*|\.\.\/|\.\/|union|UNION|into|INTO|load_file|LOAD_FILE|outfile|OUTFILE/i', $strsql);
 
-	if($check)
-	{
+	if ($check) {
 		return 1;
 	}
-
 }
 
-function  creat_sharecode($len = 13) {
-    $chars='ABDEFGHJKLMNPQRSTVWXYabdefghijkmnpqrstvwxy23456789';
-    mt_srand((double)microtime() * 1000000 * getmypid());
+function  creat_sharecode($len = 13)
+{
+	$chars = 'ABDEFGHJKLMNPQRSTVWXYabdefghijkmnpqrstvwxy23456789';
+	mt_srand((float)microtime() * 1000000 * getmypid());
 
-    $result = '';
-    while(strlen($result) < $len)
-        $result .= substr($chars, (mt_rand() % strlen($chars)), 1);
+	$result = '';
+	while (strlen($result) < $len)
+		$result .= substr($chars, (mt_rand() % strlen($chars)), 1);
 
-    return $result;
+	return $result;
 }
 
 
-function  randStr($len = 6) {
-    $chars='ABDEFGHJKLMNPQRSTVWXYabdefghijkmnpqrstvwxy23456789';
-    mt_srand((double)microtime() * 1000000 * getmypid());
+function  randStr($len = 6)
+{
+	$chars = 'ABDEFGHJKLMNPQRSTVWXYabdefghijkmnpqrstvwxy23456789';
+	mt_srand((float)microtime() * 1000000 * getmypid());
 
-    $result = '';
-    while(strlen($result) < $len)
-        $result .= substr($chars, (mt_rand() % strlen($chars)), 1);
+	$result = '';
+	while (strlen($result) < $len)
+		$result .= substr($chars, (mt_rand() % strlen($chars)), 1);
 
-    return $result;
+	return $result;
 }
 
 
 
 //创建TOKEN
-function creatToken() {
-    $code = chr(mt_rand(0xB0, 0xF7)) . chr(mt_rand(0xA1, 0xFE)) . chr(mt_rand(0xB0, 0xF7)) . chr(mt_rand(0xA1, 0xFE)) . chr(mt_rand(0xB0, 0xF7)) . chr(mt_rand(0xA1, 0xFE));
-    session('__token__', authcode($code));
+function creatToken()
+{
+	$code = chr(mt_rand(0xB0, 0xF7)) . chr(mt_rand(0xA1, 0xFE)) . chr(mt_rand(0xB0, 0xF7)) . chr(mt_rand(0xA1, 0xFE)) . chr(mt_rand(0xB0, 0xF7)) . chr(mt_rand(0xA1, 0xFE));
+	session('__token__', authcode($code));
 }
 /* 加密TOKEN */
-function authcode($str) {
-    $key = "ANDIAMON";
-    $str = substr(md5($str), 8, 10);
-    return md5($key . $str);
+function authcode($str)
+{
+	$key = "ANDIAMON";
+	$str = substr(md5($str), 8, 10);
+	return md5($key . $str);
 }
 //判断TOKEN
-function checkToken($token) {
-    if ($token == session('__token__')) {
-        //session('__token__', NULL);
-        return true;
-    } else {
+function checkToken($token)
+{
+	if ($token == session('__token__')) {
+		//session('__token__', NULL);
+		return true;
+	} else {
 		return false;
-    }
+	}
 }
 
 
-if (!function_exists('get_config')){
-    function get_config($key = '') {
-        if (!session('sys_config')) {
-            $config = M('Config')->where(['id' => 1])->find();
-            session('sys_config', $config);
-        }
-        $config = session('sys_config');
-        if ($key === '') {
-            return $config;
-        }
-        return isset($config[$key]) ? $config[$key] : '';
-    }
+if (!function_exists('get_config')) {
+	function get_config($key = '')
+	{
+		if (!session('sys_config')) {
+			$config = M('Config')->where(['id' => 1])->find();
+			session('sys_config', $config);
+		}
+		$config = session('sys_config');
+		if ($key === '') {
+			return $config;
+		}
+		return isset($config[$key]) ? $config[$key] : '';
+	}
 }
-
-
-
-
-
-?>
