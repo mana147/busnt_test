@@ -820,4 +820,5 @@ return [
 '注册是否赠送体验矿机'=> 'Có tặng máy đào thử nghiệm khi đăng ký không',
 '赠送'=> 'Tặng',
 '不送'=> 'Không tặng',
+'请输入邮箱或手机' => 'Vui lòng nhập hộp thư hoặc điện thoại di động',
 ];
