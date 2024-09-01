@@ -821,5 +821,6 @@ return [
 '赠送'=> 'Tặng',
 '不送'=> 'Không tặng',
 '请输入邮箱或手机' => 'Vui lòng nhập hộp thư hoặc điện thoại di động',
-'我要购买' => 'Tôi muốn mua'
+'我要购买' => 'Tôi muốn mua',
+'独资矿机' => 'Máy khai thác độc quyền'
 ];
