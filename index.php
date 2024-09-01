@@ -29,9 +29,9 @@ define('DB_HOST', '127.0.0.1');
 // 定义数据库名
 define('DB_NAME', 'bunst');
 // 定义数据库账号
-define('DB_USER', 'root');
+define('DB_USER', 'bunst');
 // 定义数据库密码
-define('DB_PWD', 'your_password');
+define('DB_PWD', 'bunst');
 // 定义数据库端口
 define('DB_PORT', '3306');
 
