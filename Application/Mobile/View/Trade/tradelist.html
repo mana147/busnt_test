@@ -888,27 +888,7 @@
 
 	</nav>
 
-	<!-- CSS -->
-	<style>
-		#livechat-icon {
-			position: fixed;
-			bottom: 20px;
-			right: 20px;
-			cursor: pointer;
-			z-index: 1000;
-		}
 
-		.css-1yzzujv  {
-			display: none !important;
-		}
-	</style>
-
-	<!-- JavaScript -->
-	<script>
-		document.getElementById('livechat-icon').addEventListener('click', function () {
-			LiveChatWidget.call('maximize');
-		});
-	</script>
 
 	<!-- LiveChat Code -->
 	<script>
@@ -928,7 +908,29 @@
 	</noscript>
 
 
-	
+
+	<!-- CSS -->
+	<style>
+		#livechat-icon {
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			cursor: pointer;
+			z-index: 1000;
+		}
+
+		.css-1yzzujv {
+			display: none !important;
+		}
+	</style>
+
+	<!-- JavaScript -->
+	<script>
+		document.getElementById('livechat-icon').addEventListener('click', function () {
+			LiveChatWidget.call('maximize');
+		});
+	</script>
+
 	<!-- HTML -->
 	<div id="livechat-icon" style="position: fixed; bottom: 20px; right: 20px; cursor: pointer;">
 		<img src="https://example.com/icon.png" alt="LiveChat" style="width: 50px; height: 50px;">
