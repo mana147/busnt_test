@@ -4,4 +4,4 @@ Runtime/
 # Logs and Cache files
 Application/Runtime/
 #index
-index.php
+/index.php
