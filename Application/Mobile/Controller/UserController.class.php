@@ -1026,9 +1026,7 @@ class UserController extends MobileController
 			$this->assign('adrinfo', $adrinfo);
 		}
 
-		showLOG($money);die;
-
-		// $this->display();
+		$this->display();
 	}
 
 
