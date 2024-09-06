@@ -7,7 +7,42 @@ class UserController extends MobileController
 	protected function _initialize()
 	{
 		parent::_initialize();
-		$allow_action = array("index", "getmoneyinfo", "getallzhehe", "login", "qianbao", "qianbaoadd", "qianbao_coin_list", "upqianbao", "delqianbao", "log", "czcoin", "czbank", "getsymbol", "czpage", "recharge_img", "paycoin", "czlist", "czinfo", "txcoin", "txsend", "getcoinnum", "txpage", "txpages", "txaddlist", "plusaddress", "upplusaddress", "getaddress", "tbhandle", "txlist", "txinfo", "coininfo", "getnewprice", "deladdress", "addresslist", "getmoneyusdt", "getmoneybtc", "getmoneyeth", "getmoneydydx", "getmoneyeos", "getmoneydoge", "getmoneybch", "getmoneyltc", "getmoneytrx", "getmoneyxrp", "getmoneyiotx", "getmoneyfil", "getmoneyshib", "getmoneyflow", "getmoneyjst", "getmoneyitc", "getmoneyht", "getmoneyogo", "getmoneyusdz", "getmoneyatm", "getmoneyttc", "authrz", "upauthrz", "online", "uptxt", "getlineinfo");
+		$allow_action = array(
+			"index", 
+			"getmoneyinfo", 
+			"getallzhehe", 
+			"login", 
+			"qianbao", 
+			"qianbaoadd", 
+			"qianbao_coin_list", 
+			"upqianbao", 
+			"delqianbao", 
+			"log", 
+			"czcoin", 
+			"czbank", 
+			"getsymbol", 
+			"czpage", 
+			"recharge_img", 
+			"paycoin", 
+			"czlist", 
+			"czinfo", 
+			"txcoin", 
+			"txsend", 
+			"getcoinnum", 
+			"txpage_bank", 
+			"txpage", 
+			"txpages", 
+			"txaddlist", 
+			"plusaddress", 
+			"upplusaddress", 
+			"getaddress", 
+			"tbhandle", 
+			"txlist", 
+			"txinfo", 
+			"coininfo", 
+			"getnewprice",
+			"deladdress", 
+			"addresslist", "getmoneyusdt", "getmoneybtc", "getmoneyeth", "getmoneydydx", "getmoneyeos", "getmoneydoge", "getmoneybch", "getmoneyltc", "getmoneytrx", "getmoneyxrp", "getmoneyiotx", "getmoneyfil", "getmoneyshib", "getmoneyflow", "getmoneyjst", "getmoneyitc", "getmoneyht", "getmoneyogo", "getmoneyusdz", "getmoneyatm", "getmoneyttc", "authrz", "upauthrz", "online", "uptxt", "getlineinfo");
 		if (!in_array(ACTION_NAME, $allow_action)) {
 			$this->error("非法操作");
 		}
