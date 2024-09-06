@@ -860,8 +860,8 @@ class UserController extends MobileController
 			$data['czline'] = $czline;
 
 
-			showLOG($data);die;
-			
+			var_dump($data);die;
+
 			$result = M("myzc")->add($data);
 
 			//操作日志
