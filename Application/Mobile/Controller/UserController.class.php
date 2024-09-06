@@ -1008,7 +1008,6 @@ class UserController extends MobileController
 
 	public function txpage_bank()
 	{
-		die("ok");
 		$id = trim(I('get.id'));
 		if ($id <= 0) {
 			$this->redirect('User/txcoin');
