@@ -510,12 +510,14 @@ class UserController extends MobileController
 	    $this->ajaxReturn($re);
 	}
 	
-	//获取单个币种资产(btc)
+	//Nhận một tài sản tiền tệ duy nhất(btc)
 	public function getmoneybtc(){
 	    $uid = userid();
 	    $wallinfo = M("user_coin")->where(array('userid'=>$uid))->find();
 	    
 	    $coinapi = "https://api.huobi.pro/market/history/kline?period=1day&size=1&symbol=btcusdt";
+		var_dump($coinapi);
+		
 	    $result = $this->get_maket_api($coinapi);
 	    $price_arr  = $result['data'][0];
 	    $usdt_price = $price_arr['close'];
