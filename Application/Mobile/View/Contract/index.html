@@ -875,7 +875,6 @@
         $.post("{:U('Contract/creatorder')}",
         {'ctime':ctime,'ctzed':ctzed,'ccoinname':ccoinname,'ctzfx':ctzfx,'cykbl':cykbl},
         function(data){
-            console.log('data :>> ', data);
             if(data.code == 1){
                 $('#timer_circle_right').attr('style','-webkit-animation: run '+ data.time +'s linear;')
                 $('#timer_circle_left').attr('style','-webkit-animation: runaway '+ data.time +'s linear;')
@@ -918,6 +917,8 @@
     function gettimer_hytime(id){
         var oid = id;
         $.post("{:U('Contract/get_hyorder_one')}",{'oid':oid},function(data){
+            console.log('data :>> ', data);
+            
             if(data.code == 1){
                 // $("#timer_t").text(data.time);
                 $("#timer_newprice").text(data.timer_newprice);

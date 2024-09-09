@@ -70,12 +70,12 @@ class ContractController extends MobileController
 	            $endtime = strtotime($info['selltime']);
 	            $t = $endtime -  time();
 	            if($t <= 0){
-	                //表示已结算
+	                //Thể hiện giải quyết
 	                $data['statusstr'] = '<span style="font-size:16px;font-weight:bold;">'. L("正在结算中"). '...</span>'; 
 	                $data['code'] = 2;
 	                $this->ajaxReturn($data);
 	            }else{
-	                //获取当前交易对的单价
+	                //Nhận đơn giá của cặp giao dịch hiện tại
 	                $coinarr = explode('/',$info['coinname']);
 	                $symbol = strtolower($coinarr[0].$coinarr[1]);
 	                $coinapi = "https://api.huobi.pro/market/history/kline?period=1day&size=1&symbol=".$symbol;
@@ -438,15 +438,15 @@ class ContractController extends MobileController
 	        
 	        $yu_money = M("user_coin")->where(array('userid'=>$uid))->find();
 	    
-	        //获取当前交易对的单价
+	        //Nhận đơn giá của cặp giao dịch hiện tại
 	        $coinarr = explode('/',$ccoinname);
 	        $symbol = strtolower($coinarr[0].$coinarr[1]);
 	        $coinapi = "https://api.huobi.pro/market/history/kline?period=1day&size=1&symbol=".$symbol;
 	        $result = $this->get_maket_api($coinapi);
 	        $price_arr = $result['data'][0];
-            $close = $price_arr['close'];//现价
+            $close = $price_arr['close'];//Giá hiện tại
 	        
-	        //创建订单
+	        //Tạo một đơn đặt hàng
 	        $odata['uid'] = $uid;
 	        $odata['username'] = $uinfo['username'];
 	        $odata['num'] = $ctzed;
@@ -454,7 +454,7 @@ class ContractController extends MobileController
 	        $odata['hyzd'] = $ctzfx;
 	        $odata['buy_orblance'] = $yu_money['usdt']-$tmoney;
 	        $odata['coinname'] = $ccoinname;
-	        $odata['status'] = 1;
+	        $odata['status'] = 2;
 	        $odata['is_win'] = 0;
 	        $odata['buytime'] = date("Y-m-d H:i:s",time());
 	        $odata['selltime'] = date("Y-m-d H:i:s",(time()+$ctime*60));
@@ -472,8 +472,6 @@ class ContractController extends MobileController
 	        $order = M("hyorder")->add($odata);
 	        //Khấu trừ hạn ngạch USDT
 	        $decre = M("user_coin")->where(array('userid'=>$uid))->setDec('usdt',$tmoney);
-			var_dump([$uid, $tmoney]);die;
-			
 	        //Tạo nhật ký tài chính
 	        $bill['uid'] = $uid;
 	        $bill['username'] = $uinfo['username'];
