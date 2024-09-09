@@ -426,7 +426,7 @@ class ContractController extends MobileController
             
             $hymin = $setting['hy_min'];
             if($hymin > $ctzed){
-                $this->ajaxReturn(['code'=>0,'msg'=> L('Nó không thể ít hơn hạn ngạch đầu tư tối thiểu')]);
+                $this->ajaxReturn(['code'=>0,'msg'=> L('不能小于最低投资额度')]);
             }
 	        
 	        $sxf = $setting['hy_sxf'];
