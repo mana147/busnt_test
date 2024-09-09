@@ -195,7 +195,7 @@ class ContractController extends MobileController
 	    $this->ajaxReturn(['code'=>1,'data'=>$data]);
 	}
 	
-	//购买合约详情
+	//Mua chi tiết hợp đồng
 	public function cbillinfo(){
 	    $bid = trim(I('get.bid'));
 	    if($bid <= 0){
@@ -207,7 +207,7 @@ class ContractController extends MobileController
 	    $this->display();
 	}
 	
-	//体验合约详情
+	//Kinh nghiệm chi tiết hợp đồng
 	public function cbillinfo_ty(){
 	    $bid = trim(I('get.bid'));
 	    if($bid <= 0){
@@ -219,7 +219,7 @@ class ContractController extends MobileController
 	    $this->display();
 	}
 	
-	//合约购买记录
+	//Hợp đồng mua hồ sơ
 	public function ctbill(){
 	    $uid = userid();
 	    if($uid <= 0){
@@ -454,7 +454,7 @@ class ContractController extends MobileController
 	        $odata['hyzd'] = $ctzfx;
 	        $odata['buy_orblance'] = $yu_money['usdt']-$tmoney;
 	        $odata['coinname'] = $ccoinname;
-	        $odata['status'] = 2;
+	        $odata['status'] = 1;
 	        $odata['is_win'] = 0;
 	        $odata['buytime'] = date("Y-m-d H:i:s",time());
 	        $odata['selltime'] = date("Y-m-d H:i:s",(time()+$ctime*60));
