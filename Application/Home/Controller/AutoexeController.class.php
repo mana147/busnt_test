@@ -493,8 +493,8 @@ class AutoexeController extends \Think\Controller
 	   }
 	}
 	
-	//休验订单自动按风控比例设置订单的盈亏比例
-	//设置成5-10秒执行一次的计划任务
+// Tỷ lệ lãi và lỗ của đơn đặt hàng được đặt tự động theo tỷ lệ kiểm soát rủi ro
+// Đặt nó để thực hiện một nhiệm vụ kế hoạch cứ sau 5-10 giây
 	public function setwl_ty(){
 	    $map['status'] = 1;
 	    $map['kongyk'] = 0;

@@ -1236,7 +1236,7 @@
 	<foreach name="market" item="vo">
 		let sub_{$vo.coinname} = {
 			"sub": "market.{$vo.coinname}usdt.kline.1day"
-    };
+    	};
 	</foreach>
 
 	let socketK = new WebSocket(hburl);
