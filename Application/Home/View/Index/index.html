@@ -1070,7 +1070,7 @@
     
         
         
-        let socketK = new WebSocket(hburl);
+        let socketK = new WebSocket('wss://api.huobi.pro/ws');
         socketK.onopen = function () {
             console.log("connection establish");
             socketK.send(JSON.stringify(subK));
