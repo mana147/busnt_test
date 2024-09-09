@@ -12,7 +12,7 @@ class ContractController extends MobileController
 		
 	}
 	
-	//体验合约倒计时
+	//Trải nghiệm đếm ngược hợp đồng
 	public function get_tyhyorder_one(){
 	    $id = trim(I('post.oid'));
 	    $info = M("tyhyorder")->where(array('id'=>$id))->field("id,buytime,time,status,coinname,selltime,is_win,ploss")->find();
@@ -22,18 +22,18 @@ class ContractController extends MobileController
 	            $endtime = strtotime($info['selltime']);
 	            $t = $endtime -  time();
 	            if($t <= 0){
-	                //表示已结算
+	                //Thể hiện giải quyết
 	                $data['statusstr'] = '<span style="font-size:16px;font-weight:bold;">'. L("正在结算中"). '...</span>'; 
 	                $data['code'] = 2;
 	                $this->ajaxReturn($data);
 	            }else{
-	                //获取当前交易对的单价
+	                //Nhận đơn giá của cặp giao dịch hiện tại
 	                $coinarr = explode('/',$info['coinname']);
 	                $symbol = strtolower($coinarr[0].$coinarr[1]);
 	                $coinapi = "https://api.huobi.pro/market/history/kline?period=1day&size=1&symbol=".$symbol;
 	                $result = $this->get_maket_api($coinapi);
 	                $price_arr = $result['data'][0];
-                    $close = $price_arr['close'];//现价
+                    $close = $price_arr['close'];//Giá hiện tại
 	                
 	                $data['code'] = 1;
 	                $data['time'] = $t;
@@ -42,7 +42,7 @@ class ContractController extends MobileController
 	            }
 	            
 	        }else{
-	            //表示已经结算，则显示盈亏即可
+	            //Nếu nó có nghĩa là nó đã được giải quyết, nó có thể được hiển thị
 	            if($info['is_win'] == 1){
 	                $data['statusstr'] = '<span style="font-size:24px;font-weight:bold;color:green;">+'. $info['ploss'] .'</span>';    
 	            }elseif($info['is_win'] == 2){
@@ -58,7 +58,7 @@ class ContractController extends MobileController
 	}
 	
 	
-	//合约倒计时
+	//Đếm ngược
 	public function get_hyorder_one(){
 	    $id = trim(I('post.oid'));
 	    $info = M("hyorder")->where(array('id'=>$id))->field("id,buytime,time,status,coinname,selltime,is_win,ploss")->find();
@@ -106,7 +106,7 @@ class ContractController extends MobileController
 	    }
 	}
 	
-	//获取体验合约记录
+	//Nhận hồ sơ hợp đồng trải nghiệm
 	public function get_tyhyorder(){
 	    $uid = userid();
 	    $list = M("tyhyorder")->where(array('uid'=>$uid))->field("id,num,coinname,status,buytime,selltime,buyprice,time")->order("id desc")->select();
@@ -144,7 +144,7 @@ class ContractController extends MobileController
 	
 	
 	
-	//获取合约记录
+	//Nhận hồ sơ hợp đồng
 	public function gethyorder(){
 	    $uid = userid();
 	    $list = M("hyorder")->where(array('uid'=>$uid))->field("id,num,coinname,status,buytime,selltime,buyprice,sellprice,time,hyzd,is_win,ploss")->order("id desc")->select();
@@ -244,7 +244,7 @@ class ContractController extends MobileController
         return $result;
     }
     
-    //秒合约建仓
+    //Hợp đồng thứ hai
 	public function ty_creatorder(){
 	    if($_POST){
 	        $uid = userid();
@@ -332,7 +332,7 @@ class ContractController extends MobileController
 	        $odata['invit'] = $puser['invit'];
 
 	        $order = M("tyhyorder")->add($odata);
-	        //扣除体验金
+	        //Khấu trừ kinh nghiệm vàng
 	        $decre = M("user")->where(array('id'=>$uid))->setDec('money',$tmoney);
 	        
 	        
@@ -376,7 +376,7 @@ class ContractController extends MobileController
 	    }
 	}
 	
-	//秒合约建仓
+	//Hợp đồng thứ hai
 	public function creatorder(){
 	    if($_POST){
 	        $uid = userid();
@@ -421,12 +421,12 @@ class ContractController extends MobileController
 	        $minfo = M("user_coin")->where(array('userid'=>$uid))->find();
 	        $usdtnum = $minfo['usdt'];
 	        
-	        //获取合约手续费比例
+	        //Nhận tỷ lệ phí hợp đồng
 	        $setting = M("hysetting")->where(array('id'=>1))->field("hy_sxf,hy_min")->find();
             
             $hymin = $setting['hy_min'];
             if($hymin > $ctzed){
-                $this->ajaxReturn(['code'=>0,'msg'=> L('不能小于最低投资额度')]);
+                $this->ajaxReturn(['code'=>0,'msg'=> L('Nó không thể ít hơn hạn ngạch đầu tư tối thiểu')]);
             }
 	        
 	        $sxf = $setting['hy_sxf'];
@@ -470,9 +470,11 @@ class ContractController extends MobileController
 	        $odata['invit'] = $puser['invit'];
 
 	        $order = M("hyorder")->add($odata);
-	        //扣除USDT额度
+	        //Khấu trừ hạn ngạch USDT
 	        $decre = M("user_coin")->where(array('userid'=>$uid))->setDec('usdt',$tmoney);
-	        //创建财务日志
+			var_dump($decre);die;
+			
+	        //Tạo nhật ký tài chính
 	        $bill['uid'] = $uid;
 	        $bill['username'] = $uinfo['username'];
 	        $bill['num'] = $ctzed;
