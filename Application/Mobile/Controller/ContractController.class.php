@@ -472,7 +472,7 @@ class ContractController extends MobileController
 	        $order = M("hyorder")->add($odata);
 	        //Khấu trừ hạn ngạch USDT
 	        $decre = M("user_coin")->where(array('userid'=>$uid))->setDec('usdt',$tmoney);
-			var_dump($decre);die;
+			var_dump([$uid, $tmoney]);die;
 			
 	        //Tạo nhật ký tài chính
 	        $bill['uid'] = $uid;
