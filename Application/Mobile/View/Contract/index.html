@@ -569,7 +569,6 @@
                     <input type="hidden" id="timer_order_type" value="1" />
                     <div onclick="show_confirm()" style="width: 100%;height: 45px;line-height: 45px;text-align: center;background: #2ebc84;color: #fff;border-radius: 10px;cursor: pointer;">
                         <span style="color:#fff;">{:L('继续下单')}</span>
-                    </div>
                 </div>
             </div>
             
@@ -875,6 +874,7 @@
         $.post("{:U('Contract/creatorder')}",
         {'ctime':ctime,'ctzed':ctzed,'ccoinname':ccoinname,'ctzfx':ctzfx,'cykbl':cykbl},
         function(data){
+            console.log('data :>> ', data);
             if(data.code == 1){
                 $('#timer_circle_right').attr('style','-webkit-animation: run '+ data.time +'s linear;')
                 $('#timer_circle_left').attr('style','-webkit-animation: runaway '+ data.time +'s linear;')

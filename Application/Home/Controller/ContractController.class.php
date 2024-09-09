@@ -123,7 +123,7 @@ class ContractController extends HomeController
 	    $this->ajaxReturn(['code'=>1,'data'=>$data]);
 	}
 	
-	//获取合约记录
+	//Nhận hồ sơ hợp đồng
 	public function gethyorder(){
 	    $uid = userid();
         $limit = trim(I('get.limit'));
@@ -390,11 +390,11 @@ class ContractController extends HomeController
 	            $this->ajaxReturn(['code'=>0,'msg'=> L('缺少重要参数')]);
 	        }
             
-            //获取会员资产
+            //Nhận tài sản thành viên
 	        $minfo = M("user_coin")->where(array('userid'=>$uid))->find();
 	        $usdtnum = $minfo['usdt'];
 	        
-	        //获取合约手续费比例
+	        //Nhận tỷ lệ phí hợp đồng
 	        $setting = M("hysetting")->where(array('id'=>1))->field("hy_sxf,hy_min")->find();
 	        
 	        $hymin = $setting['hy_min'];
