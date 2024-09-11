@@ -583,7 +583,7 @@ class AutoexeController extends \Think\Controller
 		//  echo "操作成功";
 	}
 
-	//自动结算体验合约订单
+	//Trải nghiệm giải quyết tự động đặt hàng hợp đồng
 	public function hycarryout_ty()
 	{
 		$nowtime = time();
@@ -802,7 +802,7 @@ class AutoexeController extends \Think\Controller
 		}
 	}
 
-	//自动结算合约订单
+	//Đơn đặt hàng hợp đồng giải quyết tự động
 	public function hycarryout()
 	{
 		$nowtime = time();
