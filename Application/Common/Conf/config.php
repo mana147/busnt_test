@@ -20,7 +20,7 @@ return array(
 	'LANG_SWITCH_ON'       => true, //开启多语言支持开关
     'COOKIE_EXPIRE'         =>  864000*7,    // Cookie有效期
 	'LANG_AUTO_DETECT'     => true, // 自动侦测语言
-	'DEFAULT_LANG'         => 'en-us', // 默认语言
+	'DEFAULT_LANG'         => 'vi-vn', // 默认语言
 	'LANG_LIST'     	   => 'zh-cn,en-us,fr-fr,de-de,it-it,ja-jp,ko-kr,tr-tr,vi-vn',
 	// 'LANG_LIST'     	   => 'vi-vn',
 	'VAR_LANGUAGE'         => 'Lang', //Biến chuyển đổi ngôn ngữ mặc định
