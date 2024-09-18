@@ -829,6 +829,12 @@ return [
     '图形验证码' => 'Mã xác minh',
     '登 录' => 'Đăng nhập',
     '登 录 中 ..' =>'Đăng nhập',
-    '用户管理' => 'Quản lý người dùng'
+    '用户管理' => 'Quản lý người dùng',
+    
+    '解冻'=> 'Giải đóng băng',
+    '允许提币'=> 'Cho phép rút tiền',
+    '禁止提币'=> 'Cấm rút tiền',
+    '删除'=> 'Xóa',
+    '群发通知'=> 'Gửi thông báo hàng loạt',
 
 ];
