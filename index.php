@@ -25,13 +25,13 @@ define('UPLOAD_PATH', './Upload/');
 // 定义数据库类型
 define('DB_TYPE', 'mysql');
 // 定义数据库地址  蜜桃源码网--www.mitaobo.com
-define('DB_HOST', '127.0.0.1');
+define('DB_HOST', 'phpmyadmin');
 // 定义数据库名
-define('DB_NAME', '');
+define('DB_NAME', 'busnt');
 // 定义数据库账号
-define('DB_USER', '');
+define('DB_USER', 'admin');
 // 定义数据库密码
-define('DB_PWD', '');
+define('DB_PWD', 'Hieu761321');
 // 定义数据库端口
 define('DB_PORT', '3306');
 
