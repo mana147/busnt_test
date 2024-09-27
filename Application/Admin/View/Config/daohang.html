@@ -1,35 +1,41 @@
-<include file="Public:header"/>
+<include file="Public:header" />
 <div id="main-content">
     <div id="top-alert" class="fixed alert alert-error" style="display: none;">
         <button class="close fixed" style="margin-top: 4px;">&times;</button>
-        <div class="alert-content">警告内容</div>
+        <div class="alert-content"><?php echo L('警告内容'); ?></div>
     </div>
     <div id="main" class="main">
         <div class="main-title-h">
-            <span class="h1-title">前端导航管理</span>
+            <span class="h1-title"><?php echo L('前端导航管理'); ?></span>
         </div>
 
         <div class="cf">
             <div class="fl">
-                <a class="btn btn-success" href="{:U('Config/daohangEdit')}">新 增</a>
-                <button class="btn ajax-post btn-info" url="{:U('Config/daohangStatus',array('type'=>'resume'))}" target-form="ids">启 用</button>
-                <button class="btn ajax-post btn-warning" url="{:U('Config/daohangStatus',array('type'=>'forbid'))}" target-form="ids">禁 用</button>
-                <button class="btn ajax-post confirm btn-danger" url="{:U('Config/daohangStatus',array('type'=>'delete'))}" target-form="ids">删 除</button>
+                <a class="btn btn-success" href="{:U('Config/daohangEdit')}"><?php echo L('新 增'); ?></a>
+                <button class="btn ajax-post btn-info" url="{:U('Config/daohangStatus',array('type'=>'resume'))}"
+                    target-form="ids"><?php echo L('启 用'); ?></button>
+                <button class="btn ajax-post btn-warning" url="{:U('Config/daohangStatus',array('type'=>'forbid'))}"
+                    target-form="ids"><?php echo L('禁 用'); ?></button>
+                <button class="btn ajax-post confirm btn-danger"
+                    url="{:U('Config/daohangStatus',array('type'=>'delete'))}" target-form="ids"><?php echo L('删 除'); ?></button>
             </div>
             <div class="search-form fr cf">
                 <div class="sleft">
                     <form name="formSearch" id="formSearch" method="get" name="form1">
-                        <select style="width: 160px; float: left; margin-right: 10px;" name="status" class="form-control">
-                            <option value="" <empty name="Think.get.status">selected</empty> >全部状态</option>
-                            <option value="2" <eq name="Think.get.status" value="2">selected</eq> >显示状态</option>
-                            <option value="1" <eq name="Think.get.status" value="1">selected</eq> >隐藏状态</option>  
+                        <select style="width: 160px; float: left; margin-right: 10px;" name="status"
+                            class="form-control">
+                            <option value="" <empty name="Think.get.status">selected</empty> ><?php echo L('全部状态'); ?></option>
+                            <option value="2" <eq name="Think.get.status" value="2">selected</eq> ><?php echo L('显示状态'); ?></option>
+                            <option value="1" <eq name="Think.get.status" value="1">selected</eq> ><?php echo L('隐藏状态'); ?></option>
                         </select>
-                        <select style=" width: 160px; float: left; margin-right: 10px;" name="lang" class="form-control">
-                        	<option value="" <eq name="Think.get.lang">selected</eq> >全部语言</option>
-                            <option value="zh-cn" <eq name="Think.get.lang" value="zh-cn">selected</eq> >简体中文</option>
-                            <option value="en-us" <eq name="Think.get.lang" value="en-us">selected</eq> >English</option>
+                        <select style=" width: 160px; float: left; margin-right: 10px;" name="lang"
+                            class="form-control">
+                            <option value="" <eq name="Think.get.lang">selected</eq> ><?php echo L('全部语言'); ?></option>
+                            <option value="zh-cn" <eq name="Think.get.lang" value="zh-cn">selected</eq> ><?php echo L('简体中文'); ?></option>
+                            <option value="en-us" <eq name="Think.get.lang" value="en-us">selected</eq> ><?php echo L('English'); ?></option>
                         </select>
-                        <input type="text" name="name" class="search-input form-control  " value="{$Think.get.name}" placeholder="请输入查询内容" style="">
+                        <input type="text" name="name" class="search-input form-control" value="{$Think.get.name}"
+                            placeholder="<?php echo L('请输入查询内容'); ?>">
                         <a class="sch-btn" href="javascript:;" id="search"> <i class="btn-search"></i> </a>
                     </form>
                     <script>
@@ -53,46 +59,54 @@
         <div class="data-table table-striped">
             <table class="">
                 <thead>
-                <tr>
-                    <th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
-                    <th class="">ID</th>
-                    <th class="">语言</th>
-                    <th class="">链接标题</th>
-                    <th class="">链接地址</th>
-                    <th class="">添加时间</th>
-                    <th class="">是否登录访问</th>
-                    <th class="">是否开放访问</th>
-                    <th class="">排序</th>
-                    <th class="">状态</th>
-                    <th class="">操作</th>
-                </tr>
+                    <tr>
+                        <th class="row-selected row-selected"><input class="check-all" type="checkbox" /></th>
+                        <th class=""><?php echo L('ID'); ?></th>
+                        <th class=""><?php echo L('语言'); ?></th>
+                        <th class=""><?php echo L('链接标题'); ?></th>
+                        <th class=""><?php echo L('链接地址'); ?></th>
+                        <th class=""><?php echo L('添加时间'); ?></th>
+                        <th class=""><?php echo L('是否登录访问'); ?></th>
+                        <th class=""><?php echo L('是否开放访问'); ?></th>
+                        <th class=""><?php echo L('排序'); ?></th>
+                        <th class=""><?php echo L('状态'); ?></th>
+                        <th class=""><?php echo L('操作'); ?></th>
+                    </tr>
                 </thead>
                 <tbody>
-                <notempty name="list">
-                    <volist name="list" id="vo">
-                        <tr>
-                            <td><input class="ids" type="checkbox" name="id[]" value="{$vo.id}"/></td>
-                            <td>{$vo.id}</td>
-                            <td>{$vo.lang}</td>
-                            <td>{$vo.title}</td>
-                            <td>{$vo.url}</td>                
-                            <td>{$vo.addtime|addtime}</td>
-							<td>
-								<eq name="vo.get_login" value="1"><b style="color: #10A017">需要</b><else/><b style="color: #F70408">不需要</b></eq>
-							</td>
-							<td>
-								<eq name="vo.access" value="1"><b style="color: #F70408">不开放</b><else/><b style="color: #10A017">开放</b></eq>
-							</td>
-							<td>{$vo.sort}</td>
-							<td>
-								<eq name="vo.status" value="1"><b style="color: #10A017">显示</b><else/><b style="color: #F70408">隐藏</b></eq>
-							</td>
-                            <td><a href="{:U('Config/daohangEdit?id='.$vo['id'])}" class="btn btn-primary btn-xs">编辑</a></td>
-                        </tr>
-                    </volist>
-                    <else/>
-                    <td colspan="12" class="text-center empty-info"><i class="glyphicon glyphicon-exclamation-sign"></i>暂无数据</td>
-                </notempty>
+                    <notempty name="list">
+                        <volist name="list" id="vo">
+                            <tr>
+                                <td><input class="ids" type="checkbox" name="id[]" value="{$vo.id}" /></td>
+                                <td>{$vo.id}</td>
+                                <td>{$vo.lang}</td>
+                                <td>{$vo.title}</td>
+                                <td>{$vo.url}</td>
+                                <td>{$vo.addtime|addtime}</td>
+                                <td>
+                                    <eq name="vo.get_login" value="1"><b style="color: #10A017"><?php echo L('需要'); ?></b>
+                                        <else /><b style="color: #F70408"><?php echo L('不需要'); ?></b>
+                                    </eq>
+                                </td>
+                                <td>
+                                    <eq name="vo.access" value="1"><b style="color: #F70408"><?php echo L('不开放'); ?></b>
+                                        <else /><b style="color: #10A017"><?php echo L('开放'); ?></b>
+                                    </eq>
+                                </td>
+                                <td>{$vo.sort}</td>
+                                <td>
+                                    <eq name="vo.status" value="1"><b style="color: #10A017"><?php echo L('显示'); ?></b>
+                                        <else /><b style="color: #F70408"><?php echo L('隐藏'); ?></b>
+                                    </eq>
+                                </td>
+                                <td><a href="{:U('Config/daohangEdit?id='.$vo['id'])}"
+                                        class="btn btn-primary btn-xs"><?php echo L('编辑'); ?></a></td>
+                            </tr>
+                        </volist>
+                        <else />
+                        <td colspan="12" class="text-center empty-info"><i
+                                class="glyphicon glyphicon-exclamation-sign"></i><?php echo L('暂无数据'); ?></td>
+                    </notempty>
                 </tbody>
             </table>
             <div class="page">
@@ -101,11 +115,11 @@
         </div>
     </div>
 </div>
-<include file="Public:footer"/>
+<include file="Public:footer" />
 <block name="script">
     <script type="text/javascript" charset="utf-8">
         //导航高亮
         highlight_subnav("{:U('Config/daohang')}");
-		$('title').html('前端导航管理-'+'__WEBTITLE__');
+        $('title').html('<?php echo L("前端导航管理"); ?>-' + '__WEBTITLE__');
     </script>
 </block>

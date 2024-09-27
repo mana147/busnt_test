@@ -2,12 +2,12 @@
 <div id="main-content">
 	<div id="top-alert" class="fixed alert alert-error" style="display: none;">
 		<button class="close fixed" style="margin-top: 4px;">&times;</button>
-		<div class="alert-content">警告内容</div>
+		<div class="alert-content"><?php echo L('警告内容'); ?></div>
 	</div>
 	<div id="main" class="main">
 		<div class="main-title-h">
-			<span class="h1-title">服务器钱包信息</span>
-			<span class="h2-title">>><a href="{:U('Coin/index')}">币种列表</a></span>
+			<span class="h1-title"><?php echo L('服务器钱包信息'); ?></span>
+			<span class="h2-title">>><a href="{:U('Coin/index')}"><?php echo L('币种列表'); ?></a></span>
 		</div>
 
 		<div class="tab-wrap">
@@ -18,25 +18,19 @@
 						<div class="form-item cf">
 							<table>
 								<tr class="controls">
-									<td class="item-label">钱包名称 :</td>
+									<td class="item-label"><?php echo L('钱包名称'); ?> :</td>
 									<td></td>
 									<td class="item-note">{$data.coin|default="0"}</td>
 								</tr>
 								<tr class="controls">
-									<td class="item-label">钱包版本 :</td>
+									<td class="item-label"><?php echo L('钱包版本'); ?> :</td>
 									<td></td>
 									<td class="item-note">
-<!--										<eq name="data.coin" value="btc">
-											{$data.c.walletversion|default="0"}
-										<else/>
-											<eq name="data.coin" value="neo">{$data.ver2}
-											<else/>{$data.ver}</eq>
-										</eq>-->
 										{$data.c.walletversion|default="0"}
 									</td>
 								</tr>
 								<tr class="controls">
-									<td class="item-label">钱包交易次数 :</td>
+									<td class="item-label"><?php echo L('钱包交易次数'); ?> :</td>
 									<td></td>
 									<td class="item-note">
 										{$data.c.txcount|default="0"}
@@ -44,7 +38,7 @@
 								</tr>
 
 								<tr class="controls">
-									<td class="item-label">总区块 :</td>
+									<td class="item-label"><?php echo L('总区块'); ?> :</td>
 									<td></td>
 									<td class="item-note">
 										<eq name="data.coin" value="btc">
@@ -56,23 +50,23 @@
 									</td>
 								</tr>
 								<tr class="controls">
-									<td class="item-label">已经加载区块 :</td>
+									<td class="item-label"><?php echo L('已经加载区块'); ?> :</td>
 									<td></td>
 									<td class="item-note">{$data.a.blocks|default="0"}</td>
 								</tr>
 								<tr class="controls">
-									<td class="item-label">加载进度 :</td>
+									<td class="item-label"><?php echo L('加载进度'); ?> :</td>
 									<td></td>
 									<td class="item-note">
 										<eq name="data.a.blocks" value="$data['a']['headers']"> 
-											<font color="red">数据已加载完毕</font> 
+											<font color="red"><?php echo L('数据已加载完毕'); ?></font> 
 										<else />
-											数据已加载:{$data['b']['verificationprogress']*100}%(加载完毕前不可交易) 
+											<?php echo L('数据已加载'); ?>:{$data['b']['verificationprogress']*100}%(<?php echo L('加载完毕前不可交易'); ?>) 
 										</eq>
 									</td>
 								</tr>
 								<tr class="controls">
-									<td class="item-label">钱包总额 :</td>
+									<td class="item-label"><?php echo L('钱包总额'); ?> :</td>
 									<td></td>
 									<td class="item-note">
 										<eq name="data.coin" value="btc">
@@ -84,13 +78,13 @@
 									</td>
 								</tr>
 								<tr class="controls">
-									<td class="item-label">站内总额 :</td>
+									<td class="item-label"><?php echo L('站内总额'); ?> :</td>
 									<td></td>
 									<td class="item-note">{$data['num']}</td>
 								</tr>
 
 								<tr class="controls">
-									<td class="item-label">当前费率 :</td>
+									<td class="item-label"><?php echo L('当前费率'); ?> :</td>
 									<td></td>
 									<td class="item-note">
 										<eq name="data.coin" value="btc">

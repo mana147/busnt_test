@@ -2,12 +2,12 @@
 <div id="main-content">
 	<div id="top-alert" class="fixed alert alert-error" style="display: none;">
 		<button class="close fixed" style="margin-top: 4px;">&times;</button>
-		<div class="alert-content">警告内容</div>
+		<div class="alert-content"><?php echo L('警告内容'); ?></div>
 	</div>
 	<div id="main" class="main">
 		<div class="main-title-h">
-			<span class="h1-title">币币交易限价委托订单</span>
-			<a class="btn btn-warning" onClick="location.href='{:U('Trade/bbxjlist')}'">初始化搜索</a>
+			<span class="h1-title"><?php echo L('币币交易限价委托订单'); ?></span>
+			<a class="btn btn-warning" onClick="location.href='{:U('Trade/bbxjlist')}'"><?php echo L('初始化搜索'); ?></a>
 		</div>
 		<div class="cf">
 			<div class="search-form fr cf" style="43px;float: none !important;">
@@ -16,30 +16,30 @@
 						<select style="width: 120px; float: left; margin-right: 10px;" name="type" class="form-control">
 							<option value=""
 							<empty name="Think.get.type">selected</empty>
-							>全部类型</option>
+							><?php echo L('全部类型'); ?></option>
 							<option value="1"
 							<eq name="Think.get.type" value="1">selected</eq>
-							>购买</option>
+							><?php echo L('购买'); ?></option>
 							<option value="2"
 							<eq name="Think.get.type" value="2">selected</eq>
-							>出售</option>
+							><?php echo L('出售'); ?></option>
 						</select>
 						
 						<select style="width: 120px; float: left; margin-right: 10px;" name="status" class="form-control">
 							<option value=""
 							<empty name="Think.get.status">selected</empty>
-							>交易状态</option>
+							><?php echo L('交易状态'); ?></option>
 							<option value="1"
 							<eq name="Think.get.status" value="1">selected</eq>
-							>委托中</option>
+							><?php echo L('委托中'); ?></option>
 							<option value="2"
 							<eq name="Think.get.status" value="2">selected</eq>
-							>已完成</option>
+							><?php echo L('已完成'); ?></option>
 							<eq name="Think.get.status" value="3">selected</eq>
-							>已撤消</option>
+							><?php echo L('已撤消'); ?></option>
 						</select>
 
-						<input type="text" name="username" class="search-input form-control" value="" placeholder="请输入用户名" />
+						<input type="text" name="username" class="search-input form-control" value="" placeholder="<?php echo L('请输入用户名'); ?>" />
 						<a class="sch-btn" href="javascript:;" id="search"> <i class="btn-search"></i> </a>
 					</form>
 					<script>
@@ -65,17 +65,17 @@
 				<thead>
 				<tr>
 					<th class="">ID</th>
-					<th class="">会员账号</th>
-					<th class="">交易对</th>
-					<th class="">方向</th>
-					<th class="">状态</th>
-					<th class="">委托额度</th>
-					<th class="">USDT额度</th>
-					<th class="">交易限价</th>
-					<th class="">交易价格</th>
-					<th class="">委托时间</th>
-					<th class="">交易时间</th>
-					<th class="">手续费比例</th>
+					<th class=""><?php echo L('会员账号'); ?></th>
+					<th class=""><?php echo L('交易对'); ?></th>
+					<th class=""><?php echo L('方向'); ?></th>
+					<th class=""><?php echo L('状态'); ?></th>
+					<th class=""><?php echo L('委托额度'); ?></th>
+					<th class=""><?php echo L('USDT额度'); ?></th>
+					<th class=""><?php echo L('交易限价'); ?></th>
+					<th class=""><?php echo L('交易价格'); ?></th>
+					<th class=""><?php echo L('委托时间'); ?></th>
+					<th class=""><?php echo L('交易时间'); ?></th>
+					<th class=""><?php echo L('手续费比例'); ?></th>
 				</tr>
 				</thead>
 				<tbody>
@@ -87,18 +87,18 @@
 						<td>{$vo.symbol}</td>
 						<td>
 						    <if condition="$vo.type eq 1">
-						        <span style="color:#0ecb81;">购买</span>
+						        <span style="color:#0ecb81;"><?php echo L('购买'); ?></span>
 						    <elseif condition="$vo.type eq 2" />
-						        <span style="color:#f5465c;">出售</span>
+						        <span style="color:#f5465c;"><?php echo L('出售'); ?></span>
 						    </if>
 						</td>
 						<td>
 						    <if condition="$vo.status eq 1">
-						        <span style="color:#707A8A;">委托中</span>
+						        <span style="color:#707A8A;"><?php echo L('委托中'); ?></span>
 						    <elseif condition="$vo.status eq 2" />
-						        <span style="color:#0ecb81;">已交易</span>
+						        <span style="color:#0ecb81;"><?php echo L('已交易'); ?></span>
 						    <elseif condition="$vo.status eq 3" />
-						        <span style="color:#f5465c;">已撤消</span>
+						        <span style="color:#f5465c;"><?php echo L('已撤消'); ?></span>
 						    </if>
 						</td>
 						<td>{$vo.coinnum}</td>
@@ -112,7 +112,7 @@
 					</volist>
                     <else/>
 					<td colspan="12" class="text-center empty-info">
-					    <i class="glyphicon glyphicon-exclamation-sign"></i>暂无数据
+					    <i class="glyphicon glyphicon-exclamation-sign"></i><?php echo L('暂无数据'); ?>
 					</td>
 					</notempty>
 				</tbody>

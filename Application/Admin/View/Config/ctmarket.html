@@ -2,21 +2,21 @@
 <div id="main-content">
     <div id="top-alert" class="fixed alert alert-error" style="display: none;">
         <button class="close fixed" style="margin-top: 4px;">&times;</button>
-        <div class="alert-content">警告内容</div>
+        <div class="alert-content"><?php echo L('警告内容'); ?></div>
     </div>
     <div id="main" class="main">
         <div class="main-title-h">
-            <span class="h1-title">市场配置(调用外部数据的交易对)</span>
+            <span class="h1-title"><?php echo L('市场配置(调用外部数据的交易对)'); ?></span>
         </div>
 
         <div class="cf">
             <div class="fl">
-                <a class="btn btn-success" href="{:U('Config/ctmarketEdit')}">新 增</a>
-                <button class="btn ajax-post btn-info" url="{:U('Config/ctmarketoStatus',array('type'=>'resume'))}" target-form="ids">启 用
+                <a class="btn btn-success" href="{:U('Config/ctmarketEdit')}"><?php echo L('新 增'); ?></a>
+                <button class="btn ajax-post btn-info" url="{:U('Config/ctmarketoStatus',array('type'=>'resume'))}" target-form="ids"><?php echo L('启 用'); ?>
                 </button>
-                <button class="btn ajax-post btn-warning" url="{:U('Config/ctmarketoStatus',array('type'=>'forbid'))}" target-form="ids">禁 用
+                <button class="btn ajax-post btn-warning" url="{:U('Config/ctmarketoStatus',array('type'=>'forbid'))}" target-form="ids"><?php echo L('禁 用'); ?>
                 </button>
-                <button class="btn ajax-post confirm btn-danger" url="{:U('Config/ctmarketoStatus',array('type'=>'del'))}" target-form="ids">删 除
+                <button class="btn ajax-post confirm btn-danger" url="{:U('Config/ctmarketoStatus',array('type'=>'del'))}" target-form="ids"><?php echo L('删 除'); ?>
                 </button>
             </div>
         </div>
@@ -26,11 +26,11 @@
 					<tr>
 						<th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
 						<th class="">ID</th>
-						<th class="">市场交易对</th>
-						<th class="">排序</th>
-						<th class="">显示状态</th>
-						<th class="">交易状态</th>
-						<th class="" style="text-align: center;">操作</th>
+						<th class=""><?php echo L('市场交易对'); ?></th>
+						<th class=""><?php echo L('排序'); ?></th>
+						<th class=""><?php echo L('显示状态'); ?></th>
+						<th class=""><?php echo L('交易状态'); ?></th>
+						<th class="" style="text-align: center;"><?php echo L('操作'); ?></th>
 					</tr>
                 </thead>
                 <tbody>
@@ -43,27 +43,27 @@
                             <td>{$vo.sort}</td>
                             <td>
                                 <eq name="vo.status" value="1">
-                                    <b style="color: #028E16;">可用</b>
+                                    <b style="color: #028E16;"><?php echo L('可用'); ?></b>
                                 <else/>
-                                    <b style="color: #F70408">禁用</b>
+                                    <b style="color: #F70408"><?php echo L('禁用'); ?></b>
                                 </eq>
                             </td>
                             
                             <td>
                                 <eq name="vo.state" value="1">
-                                    <b style="color: #028E16;">正常</b>
+                                    <b style="color: #028E16;"><?php echo L('正常'); ?></b>
                                 <else/>
-                                    <b style="color: #F70408">禁止</b>
+                                    <b style="color: #F70408"><?php echo L('禁止'); ?></b>
                                 </eq>
                             </td>
 
                             <td style="text-align: center;">
-								<a href="{:U('Config/ctmarketEdit?id='.$vo['id'])}" class="btn btn-primary btn-xs">编辑</a>
+								<a href="{:U('Config/ctmarketEdit?id='.$vo['id'])}" class="btn btn-primary btn-xs"><?php echo L('编辑'); ?></a>
                             </td>
                         </tr>
                     </volist>
                     <else/>
-                    <td colspan="12" class="text-center empty-info"><i class="glyphicon glyphicon-exclamation-sign"></i>暂无数据</td>
+                    <td colspan="12" class="text-center empty-info"><i class="glyphicon glyphicon-exclamation-sign"></i><?php echo L('暂无数据'); ?></td>
                 </notempty>
                 </tbody>
             </table>

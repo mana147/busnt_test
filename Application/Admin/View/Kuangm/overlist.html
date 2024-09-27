@@ -2,12 +2,12 @@
 <div id="main-content">
 	<div id="top-alert" class="fixed alert alert-error" style="display: none;">
 		<button class="close fixed" style="margin-top: 4px;">&times;</button>
-		<div class="alert-content">警告内容</div>
+		<div class="alert-content"><?php echo L('警告内容'); ?></div>
 	</div>
 	<div id="main" class="main">
 		<div class="main-title-h">
-			<span class="h1-title">矿机管理</span>
-			<span class="h2-title">>><a href="{:U('Kuangm/overlist')}">过期的矿机</a></span>
+			<span class="h1-title"><?php echo L('矿机管理'); ?></span>
+			<span class="h2-title">>><a href="{:U('Kuangm/overlist')}"><?php echo L('过期的矿机'); ?></a></span>
 		</div>
 		<div class="data-table table-striped">
 			<table class="">
@@ -15,15 +15,15 @@
 				<tr>
 					<th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
 					<th class="">ID</th>
-					<th class="">会员账号</th>
-					<th class="">类型</th>
-					<th class="">名称</th>
-					<th class="">图片</th>
-					<th class="">购买时间</th>
-					<th class="">结束时间</th>
-					<th class="">矿机状态</th>
-					<th class="">收益次数</th>
-					<th class="">产出币种</th>
+					<th class=""><?php echo L('会员账号'); ?></th>
+					<th class=""><?php echo L('类型'); ?></th>
+					<th class=""><?php echo L('名称'); ?></th>
+					<th class=""><?php echo L('图片'); ?></th>
+					<th class=""><?php echo L('购买时间'); ?></th>
+					<th class=""><?php echo L('结束时间'); ?></th>
+					<th class=""><?php echo L('矿机状态'); ?></th>
+					<th class=""><?php echo L('收益次数'); ?></th>
+					<th class=""><?php echo L('产出币种'); ?></th>
 				</tr>
 				</thead>
 				<tbody>
@@ -35,22 +35,22 @@
 							<td>{$vo.username}</td>
 							<td>
 							    <if condition="$vo.type eq 1">
-							        独资
+							        <?php echo L('独资'); ?>
 							    <elseif condition="$vo.type eq 2" />
-							        共享
+							        <?php echo L('共享'); ?>
 							    </if>
 							</td>
 							<td>{$vo.kjtitle}</td>
 							<td><img src="/Upload/public/{$vo.imgs}" style="height:50px;"></td>
 							<td><?php echo date("m-d H:i",strtotime($vo['addtime']));?></td>
 							<td><?php echo date("m-d H:i",strtotime($vo['endtime']));?></td>
-							<td><span style="color:red;">过期</span></td>
-							<td><?php echo ($vo['cycle'] - $vo['synum']);?>次</td>
+							<td><span style="color:red;"><?php echo L('过期'); ?></span></td>
+							<td><?php echo ($vo['cycle'] - $vo['synum']);?><?php echo L('次'); ?></td>
                             <td><?php echo strtoupper($vo['outcoin']);?></td>
 						</tr>
 					</volist>
 					<else/>
-					<td colspan="12" class="text-center empty-info"><i class="glyphicon glyphicon-exclamation-sign"></i>暂无数据</td>
+					<td colspan="12" class="text-center empty-info"><i class="glyphicon glyphicon-exclamation-sign"></i><?php echo L('暂无数据'); ?></td>
 				</notempty>
 				</tbody>
 			</table>

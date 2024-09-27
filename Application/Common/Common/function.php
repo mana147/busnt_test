@@ -51,60 +51,61 @@ function gettype_info($type = null)
 {
 	switch ($type) {
 		case 1:
-			return "充币";
+			return "Deposit";
 			break;
 		case 2:
-			return "提币";
+			return "Withdraw";
 			break;
 		case 3:
-			return "购买合约";
+			return "Buy Contract";
 			break;
 		case 4:
-			return "出售合约";
+			return "Sell Contract";
 			break;
 		case 5:
-			return "购买矿机";
+			return "Buy Mining Machine";
 			break;
 		case 6:
-			return "购机奖励";
+			return "Machine Purchase Reward";
 			break;
 		case 7:
-			return "矿机收益冻结";
+			return "Mining Machine Income Freeze";
 			break;
 		case 8:
-			return "释放冻结收益";
+			return "Release Frozen Income";
 			break;
 		case 9:
-			return "币币交易USDT";
+			return "USDT Trading";
 			break;
 		case 10:
-			return "币币交易币种";
+			return "Coin Trading";
 			break;
 		case 11:
-			return "认购扣除";
+			return "Subscription Deduction";
 			break;
 		case 12:
-			return "认购增加";
+			return "Subscription Increase";
 			break;
 		case 13:
-			return "一代认购奖励";
+			return "First Generation Subscription Reward";
 			break;
 		case 14:
-			return "二代认购奖励";
+			return "Second Generation Subscription Reward";
 			break;
 		case 15:
-			return "三代认购奖励";
+			return "Third Generation Subscription Reward";
 			break;
 		case 16:
-			return "认购币解冻";
+			return "Subscription Coin Unfreeze";
 			break;
 		case 17:
-			return "充币";
+			return "Deposit";
 			break;
 
 		default:
-			return "未定义";
+			return "Undefined";
 	}
+	
 }
 
 function list_to_tree($list, $pk = 'id', $pid = 'pid', $child = '_child', $root = 0)

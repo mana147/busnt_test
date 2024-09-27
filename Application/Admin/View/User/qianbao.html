@@ -2,16 +2,16 @@
 <div id="main-content">
 	<div id="top-alert" class="fixed alert alert-error" style="display: none;">
 		<button class="close fixed" style="margin-top: 4px;">&times;</button>
-		<div class="alert-content">警告内容</div>
+		<div class="alert-content"><?php echo L('警告内容'); ?></div>
 	</div>
 	<div id="main" class="main">
 		<div class="main-title-h">
-			<span class="h1-title">用户钱包</span>
+			<span class="h1-title"><?php echo L('用户钱包'); ?></span>
 		</div>
 		<div class="cf">
 			<div class="fl">
-				<a class="btn btn-success " href="{:U('User/qianbaoEdit')}">新 增</a>
-				<button class="btn ajax-post confirm btn-danger " url="{:U('User/qianbaoStatus',array('type'=>'del'))}" target-form="ids">删 除</button>
+				<a class="btn btn-success " href="{:U('User/qianbaoEdit')}"><?php echo L('新 增'); ?></a>
+				<button class="btn ajax-post confirm btn-danger " url="{:U('User/qianbaoStatus',array('type'=>'del'))}" target-form="ids"><?php echo L('删 除'); ?></button>
 			</div>
 			<div class="search-form fr cf">
 				<div class="sleft">
@@ -19,7 +19,7 @@
 						<select style="width: 160px; float: left; margin-right: 10px;" name="coinname" class="form-control">
 							<option value=""
 							<empty name="Think.get.coinname">selected</empty>
-							>币种</option>
+							><?php echo L('币种'); ?></option>
 							<volist name="coinlist" id="vo">
 								<option value="{$vo['name']}"
 								<eq name="vo['name']" value="$Think.get.coinname">selected</eq>
@@ -30,9 +30,9 @@
 						<select style=" width: 160px; float: left; margin-right: 10px;" name="field" class="form-control">
 							<option value="username"
 							<eq name="Think.get.field" value="username">selected</eq>
-							>用户名</option>
+							><?php echo L('用户名'); ?></option>
 						</select>
-						<input type="text" name="name" class="search-input form-control  " value="{$Think.get.name}" placeholder="请输入查询内容" style="">
+						<input type="text" name="name" class="search-input form-control  " value="{$Think.get.name}" placeholder="<?php echo L('请输入查询内容'); ?>" style="">
 						<a class="sch-btn" href="javascript:;" id="search"> <i class="btn-search"></i> </a>
 					</form>
 					<script>
@@ -59,13 +59,13 @@
 				<tr>
 					<th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
 					<th class="">ID</th>
-					<th class="">Username</th>
-					<!--<th class="">币种</th>-->
-					<th class="">Bank</th>
-					<th class="">Full name</th>
-					<th class="">Bank account</th>
-					<th class="">Time</th>
-					<th class="">操作</th>
+					<th class=""><?php echo L('Username'); ?></th>
+					<!--<th class=""><?php echo L('币种'); ?></th>-->
+					<th class=""><?php echo L('Bank'); ?></th>
+					<th class=""><?php echo L('Full name'); ?></th>
+					<th class=""><?php echo L('Bank account'); ?></th>
+					<th class=""><?php echo L('Time'); ?></th>
+					<th class=""><?php echo L('操作'); ?></th>
 				</tr>
 				</thead>
 				<tbody>
@@ -80,12 +80,12 @@
 							<td>{$vo.remark}</td>
 							<td>{$vo.addr}</td>
 							<td>{$vo.addtime}</td>
-							<td><a href="{:U('User/qianbaoEdit?id='.$vo['id'])}" class="btn btn-primary btn-xs">编辑</a>
+							<td><a href="{:U('User/qianbaoEdit?id='.$vo['id'])}" class="btn btn-primary btn-xs"><?php echo L('编辑'); ?></a>
 							</td>
 						</tr>
 					</volist>
 					<else/>
-					<td colspan="12" class="text-center empty-info"><i class="glyphicon glyphicon-exclamation-sign"></i>暂无数据</td>
+					<td colspan="12" class="text-center empty-info"><i class="glyphicon glyphicon-exclamation-sign"></i><?php echo L('暂无数据'); ?></td>
 				</notempty>
 				</tbody>
 			</table>

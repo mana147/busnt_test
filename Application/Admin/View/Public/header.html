@@ -54,7 +54,7 @@
 						<li>
 							<a href="/Admin/Index/index/Lang/zh-cn">
 								<div class="optionli">
-									<span style="color:#ff0000;font-size:14px;">简体中文</span>
+									<span style="color:#ff0000;font-size:14px;"><?php echo L('简体中文'); ?></span>
 								</div>
 							</a>
 						</li>
@@ -68,29 +68,29 @@
 					<ul class="dropdown-menu">
 						<li>
 							<a href="{:U('User/setpwd')}">
-								<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 修改密码
+								<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> <?php echo L('修改密码'); ?>
 							</a>
 						</li>
 						<li class="center">
 							<a href="javascript:void(0);" onclick="lockscreen()">
-								<span class="glyphicon glyphicon-lock" aria-hidden="true"></span> 锁屏休息
+								<span class="glyphicon glyphicon-lock" aria-hidden="true"></span> <?php echo L('锁屏休息'); ?>
 							</a>
 						</li>
 						<li class="dividers"></li>
 						<li>
 							<a href="{:U('Login/loginout')}">
-								<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> 退出后台
+								<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> <?php echo L('退出后台'); ?>
 							</a>
 						</li>
 					</ul>
 				</li>
 				<li>
-					<a href="{:U('Tools/delcache')}" class="dropdown-toggle" title="清除缓存">
+					<a href="{:U('Tools/delcache')}" class="dropdown-toggle" title="<?php echo L('清除缓存'); ?>">
 						<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 					</a>
 				</li>
 				<li>
-					<a class="dropdown-toggle" title="打开前台" href="__ROOT__/" target="_blank">
+					<a class="dropdown-toggle" title="<?php echo L('打开前台'); ?>" href="__ROOT__/" target="_blank">
 						<span class="glyphicon glyphicon-share" aria-hidden="true"></span>
 					</a>
 				</li>

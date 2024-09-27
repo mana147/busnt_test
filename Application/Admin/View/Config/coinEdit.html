@@ -6,12 +6,12 @@
 <div id="main-content">
 	<div id="top-alert" class="fixed alert alert-error" style="display: none;">
 		<button class="close fixed" style="margin-top: 4px;">&times;</button>
-		<div class="alert-content">警告内容</div>
+		<div class="alert-content"><?php echo L('警告内容'); ?></div>
 	</div>
   <div id="main" class="main">
     <div class="main-title-h"> 
-    	<span class="h1-title"><a href="{:U('Config/coin')}">币种配置</a> &gt;&gt;</span> 
-    	<span class="h1-title"><empty name="data">新增币种<else/>编辑币种</empty></span>
+    	<span class="h1-title"><a href="{:U('Config/coin')}"><?php echo L('币种配置'); ?></a> &gt;&gt;</span> 
+    	<span class="h1-title"><empty name="data"><?php echo L('新增币种'); ?><else/><?php echo L('编辑币种'); ?></empty></span>
 	</div>
     <div class="tab-wrap">
       <div class="tab-content">
@@ -21,40 +21,40 @@
               <table>
 
                 <tr class="controls">
-					<td class="item-label">币种名称 :</td>
+					<td class="item-label"><?php echo L('币种名称'); ?> :</td>
 					<empty name="data['name']">
-						<td><input type="text" class="form-control input_12" name="name" value="">必须是小写字母</td>
+						<td><input type="text" class="form-control input_12" name="name" value=""><?php echo L('必须是小写字母'); ?></td>
 					<else/>
 						<input type="hidden" class="form-control input_12" name="name" value="{$data.name}">
 						<td>{$data.name}</td>
 					</empty>
                 </tr>
                 <tr class="controls">
-					<td class="item-label">中文名称 :</td>
+					<td class="item-label"><?php echo L('中文名称'); ?> :</td>
 					<td><input type="text" class="form-control input_12" name="title" value="{$data['title']}"></td>
                 </tr>
                   <tr class="controls">
-					<td class="item-label">是否默认通道:</td>
+					<td class="item-label"><?php echo L('是否默认通道'); ?>:</td>
 					<td>
 						<select name="default_on" class="form-control input_12">
-							<option value="0" <eq name="data.default_on" value="0">selected</eq>>否</option>
-							<option value="1" <eq name="data.default_on" value="1">selected</eq>>是</option>
+							<option value="0" <eq name="data.default_on" value="0">selected</eq>><?php echo L('否'); ?></option>
+							<option value="1" <eq name="data.default_on" value="1">selected</eq>><?php echo L('是'); ?></option>
 						</select>
 					</td>
 					<td class="item-note"></td>
                 </tr>
                   <tr class="controls">
-					<td class="item-label">代理ID :</td>
+					<td class="item-label"><?php echo L('代理ID'); ?> :</td>
 					<td><input type="text" class="form-control input_12" name="agent_id" value="{$data['agent_id']}">
-				该总代理下的所有用户都使用该地址支付(只能设置总代理)	<br></td>
+				<?php echo L('该总代理下的所有用户都使用该地址支付(只能设置总代理)'); ?>	<br></td>
                 </tr>
                 <tr class="controls">
-					<td class="item-label">币种类型:</td>
+					<td class="item-label"><?php echo L('币种类型'); ?>:</td>
 					<td>
 						<select name="type" class="form-control input_12">
-							<option value="1" <eq name="data.type" value="1">selected</eq>>钱包币</option>
-							<option value="2" <eq name="data.type" value="2">selected</eq>>平台币</option>
-							<option value="3" <eq name="data.type" value="3">selected</eq>>认购币</option>
+							<option value="1" <eq name="data.type" value="1">selected</eq>><?php echo L('钱包币'); ?></option>
+							<option value="2" <eq name="data.type" value="2">selected</eq>><?php echo L('平台币'); ?></option>
+							<option value="3" <eq name="data.type" value="3">selected</eq>><?php echo L('认购币'); ?></option>
 						</select>
 					</td>
 					<td class="item-note"></td>
@@ -62,108 +62,108 @@
                 
                 
                 <tr class="controls" id="erc_token_hy">
-					<td class="item-label">充值网络1 :</td>
+					<td class="item-label"><?php echo L('充值网络1'); ?> :</td>
 					<td><input type="text" class="form-control input_12" name="czline" value="{$data['czline']}" autocomplete="off" aria-autocomplete="none"></td>
 					<td class="item-note"></td>
                 </tr>
 
                 <tr class="controls" id="erc_token_hy">
-					<td class="item-label">合约地址1 :</td>
+					<td class="item-label"><?php echo L('合约地址1'); ?> :</td>
 					<td><input type="text" class="form-control input_12" name="czaddress" value="{$data['czaddress']}" autocomplete="off" aria-autocomplete="none"></td>
 					<td class="item-note"></td>
                 </tr>
 				  <tr class="controls" id="trc_token_hy">
-					  <td class="item-label">充值网络2 :</td>
+					  <td class="item-label"><?php echo L('充值网络2'); ?> :</td>
 					  <td><input type="text" class="form-control input_12" name="czline2" value="{$data['czline2']}" autocomplete="off" aria-autocomplete="none"></td>
 					  <td class="item-note"></td>
 				  </tr>
 
 				  <tr class="controls" >
-					  <td class="item-label">合约地址2 :</td>
+					  <td class="item-label"><?php echo L('合约地址2'); ?> :</td>
 					  <td><input type="text" class="form-control input_12" name="czaddress2" value="{$data['czaddress2']}" autocomplete="off" aria-autocomplete="none"></td>
 					  <td class="item-note"></td>
 				  </tr>
 
                 <tr class="controls">
-					<td class="item-label">充币状态 :</td>
+					<td class="item-label"><?php echo L('充币状态'); ?> :</td>
 					<td>
 						<select name="czstatus" class="form-control input_12" >
-							<option value="1" <eq name="data['czstatus']" value="1">selected</eq>>正常充币</option>
-							<option value="2" <eq name="data['czstatus']" value="2">selected</eq>>禁止充币</option>
+							<option value="1" <eq name="data['czstatus']" value="1">selected</eq>><?php echo L('正常充币'); ?></option>
+							<option value="2" <eq name="data['czstatus']" value="2">selected</eq>><?php echo L('禁止充币'); ?></option>
 						</select>
 					</td>
 					<td class="item-note"></td>
                 </tr>
                 
                 <tr class="controls">
-					<td class="item-label">最小充值额度 :</td>
-					<td><input type="text" class="form-control input_12" placeholder="最小充值额度" name="czminnum" value="{$data['czminnum']}"></td>
+					<td class="item-label"><?php echo L('最小充值额度'); ?> :</td>
+					<td><input type="text" class="form-control input_12" placeholder="<?php echo L('最小充值额度'); ?>" name="czminnum" value="{$data['czminnum']}"></td>
                 </tr>
                 
                 <tr class="controls">
-					<td class="item-label">手续费类型 :</td>
+					<td class="item-label"><?php echo L('手续费类型'); ?> :</td>
 					<td>
 						<select name="sxftype" class="form-control input_12" >
-							<option value="1" <eq name="data['sxftype']" value="1">selected</eq>>按百分比扣除</option>
-							<option value="2" <eq name="data['sxftype']" value="2">selected</eq>>按数量扣除</option>
+							<option value="1" <eq name="data['sxftype']" value="1">selected</eq>><?php echo L('按百分比扣除'); ?></option>
+							<option value="2" <eq name="data['sxftype']" value="2">selected</eq>><?php echo L('按数量扣除'); ?></option>
 						</select>
 					</td>
 					<td class="item-note"></td>
                 </tr>
                 
                 <tr class="controls">
-					<td class="item-label">按百分比 :</td>
-					<td><input type="text" class="form-control input_12" placeholder="% (填写0.01-100 任意数字)" name="txsxf" value="{$data['txsxf']}"></td>
+					<td class="item-label"><?php echo L('按百分比'); ?> :</td>
+					<td><input type="text" class="form-control input_12" placeholder="% (<?php echo L('填写0.01-100 任意数字'); ?>)" name="txsxf" value="{$data['txsxf']}"></td>
                 </tr>
                 
                 <tr class="controls">
-					<td class="item-label">按数量 :</td>
-					<td><input type="text" class="form-control input_12" placeholder="填写0.01-100 任意数字" name="txsxf_n" value="{$data['txsxf_n']}"></td>
+					<td class="item-label"><?php echo L('按数量'); ?> :</td>
+					<td><input type="text" class="form-control input_12" placeholder="<?php echo L('填写0.01-100 任意数字'); ?>" name="txsxf_n" value="{$data['txsxf_n']}"></td>
                 </tr>
 
                 <tr class="controls">
-                	<td class="item-label">最小提币数量 :</td>
-                	<td><input type="text" class="form-control input_12" placeholder="正数且大于0.01" name="txminnum" value="{$data['txminnum']}"></td>
+                	<td class="item-label"><?php echo L('最小提币数量'); ?> :</td>
+                	<td><input type="text" class="form-control input_12" placeholder="<?php echo L('正数且大于0.01'); ?>" name="txminnum" value="{$data['txminnum']}"></td>
                 </tr>
                 <tr class="controls">
-                	<td class="item-label">最大提币数量 :</td>
-                	<td><input type="text" class="form-control input_12" placeholder="正数且大于10000" name="txmaxnum" value="{$data['txmaxnum']}"></td>
+                	<td class="item-label"><?php echo L('最大提币数量'); ?> :</td>
+                	<td><input type="text" class="form-control input_12" placeholder="<?php echo L('正数且大于10000'); ?>" name="txmaxnum" value="{$data['txmaxnum']}"></td>
                 </tr>
                 <tr class="controls">
-                	<td class="item-label">提币状态 :</td>
+                	<td class="item-label"><?php echo L('提币状态'); ?> :</td>
 					<td>
 						<select name="txstatus" class="form-control input_12">
-							<option value="1" <eq name="data['txstatus']" value="1">selected</eq>>正常提币</option>
-							<option value="2" <eq name="data['txstatus']" value="2">selected</eq>>禁止提币</option>
+							<option value="1" <eq name="data['txstatus']" value="1">selected</eq>><?php echo L('正常提币'); ?></option>
+							<option value="2" <eq name="data['txstatus']" value="2">selected</eq>><?php echo L('禁止提币'); ?></option>
 						</select>
 					</td>
 					<td class="item-note"></td>
                 </tr>
                 
                 <tr class="controls">
-                	<td class="item-label">币种状态 :</td>
+                	<td class="item-label"><?php echo L('币种状态'); ?> :</td>
 					<td>
 						<select name="status" class="form-control input_12">
-							<option value="1" <eq name="data['status']" value="1">selected</eq>>可用</option>
-							<option value="2" <eq name="data['status']" value="2">selected</eq>>禁止</option>
+							<option value="1" <eq name="data['status']" value="1">selected</eq>><?php echo L('可用'); ?></option>
+							<option value="2" <eq name="data['status']" value="2">selected</eq>><?php echo L('禁止'); ?></option>
 						</select>
 					</td>
 					<td class="item-note"></td>
                 </tr>
                 
                 <tr class="controls">
-					<td class="item-label">币币交易手续费 :</td>
-					<td><input type="text" class="form-control input_12" placeholder="% (填写0.01-100 任意数字)" name="bbsxf" value="{$data['bbsxf']}"></td>
+					<td class="item-label"><?php echo L('币币交易手续费'); ?> :</td>
+					<td><input type="text" class="form-control input_12" placeholder="% (<?php echo L('填写0.01-100 任意数字'); ?>)" name="bbsxf" value="{$data['bbsxf']}"></td>
                 </tr>
                 
                 <tr class="controls">
-					<td class="item-label">合约交易手续费 :</td>
-					<td><input type="text" class="form-control input_12" placeholder="% (填写0.01-100 任意数字)" name="hysxf" value="{$data['hysxf']}"></td>
+					<td class="item-label"><?php echo L('合约交易手续费'); ?> :</td>
+					<td><input type="text" class="form-control input_12" placeholder="% (<?php echo L('填写0.01-100 任意数字'); ?>)" name="hysxf" value="{$data['hysxf']}"></td>
                 </tr>
 
                 
 				<tr class="controls">
-					<td class="item-label">排序 :</td>
+					<td class="item-label"><?php echo L('排序'); ?> :</td>
 					<td><input type="text" class="form-control input_12" name="sort" value="{$data.sort}"></td>
 					<td class="item-note"></td>
 				</tr>
@@ -172,8 +172,8 @@
 					<td class="item-label"></td>
 					<td>
 						<div class="form-item cf">
-							<button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">提交</button>
-							<a class="btn btn-return" href="{$Think.server.HTTP_REFERER}">返 回</a>
+							<button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal"><?php echo L('提交'); ?></button>
+							<a class="btn btn-return" href="{$Think.server.HTTP_REFERER}"><?php echo L('返 回'); ?></a>
 							<notempty name="data.id">
 								<input type="hidden" name="id" value="{$data.id}"/>
 							</notempty>

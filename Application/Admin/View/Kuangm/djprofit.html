@@ -2,18 +2,18 @@
 <div id="main-content">
 	<div id="top-alert" class="fixed alert alert-error" style="display: none;">
 		<button class="close fixed" style="margin-top: 4px;">&times;</button>
-		<div class="alert-content">警告内容</div>
+		<div class="alert-content"><?php echo L('警告内容'); ?></div>
 	</div>
 	<div id="main" class="main">
 		<div class="main-title-h">
-			<span class="h1-title">矿机管理</span>
-			<span class="h2-title">>><a href="{:U('Kuangm/djprofit')}">收益列表</a></span>
+			<span class="h1-title"><?php echo L('矿机管理'); ?></span>
+			<span class="h2-title">>><a href="{:U('Kuangm/djprofit')}"><?php echo L('收益列表'); ?></a></span>
 		</div>
 		<div class="cf">
             <div class="search-form fr cf" style="43px;float: none !important;">
 				<div class="sleft">
 					<form name="formSearch" id="formSearch" method="get" name="form1">
-						<input type="text" name="username" class="search-input form-control" value="" placeholder="输入用户账号" />
+						<input type="text" name="username" class="search-input form-control" value="" placeholder="<?php echo L('输入用户账号'); ?>" />
 						<a class="sch-btn" href="javascript:;" id="search"> <i class="btn-search"></i> </a>
 					</form>
 					<script>
@@ -40,13 +40,13 @@
 				<tr>
 					<th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
 					<th class="">ID</th>
-					<th class="">会员账号</th>
-					<th class="">冻结金额</th>
-					<th class="">冻结币种</th>
-					<th class="">状态</th>
-					<th class="">冻结时间</th>
-					<th class="">解冻结时间</th>
-					<th class="">冻结说明</th>
+					<th class=""><?php echo L('会员账号'); ?></th>
+					<th class=""><?php echo L('冻结金额'); ?></th>
+					<th class=""><?php echo L('冻结币种'); ?></th>
+					<th class=""><?php echo L('状态'); ?></th>
+					<th class=""><?php echo L('冻结时间'); ?></th>
+					<th class=""><?php echo L('解冻结时间'); ?></th>
+					<th class=""><?php echo L('冻结说明'); ?></th>
 				</tr>
 				</thead>
 				<tbody>
@@ -60,9 +60,9 @@
 							<td><?php echo strtoupper($vo['coin']);?></td>
 							<td>
 							    <if condition="$vo.status eq 1">
-							    <span style="color:green">待释放</span>
+							    <span style="color:green"><?php echo L('待释放'); ?></span>
 							    <elseif  condition="$vo.status eq 2" />
-							    <span style="color:red">已释放</span>
+							    <span style="color:red"><?php echo L('已释放'); ?></span>
 							    </if>
 							</td>
 							<td>{$vo.addday}</td>
@@ -71,7 +71,7 @@
 						</tr>
 					</volist>
 					<else/>
-					<td colspan="12" class="text-center empty-info"><i class="glyphicon glyphicon-exclamation-sign"></i>暂无数据</td>
+					<td colspan="12" class="text-center empty-info"><i class="glyphicon glyphicon-exclamation-sign"></i><?php echo L('暂无数据'); ?></td>
 				</notempty>
 				</tbody>
 			</table>
